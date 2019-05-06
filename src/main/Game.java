@@ -6,15 +6,18 @@ import java.util.List;
 import model.Impulsionar;
 import model.IrDireita;
 import model.IrEsquerda;
+import model.Movimentos;
 import model.impl.Movimento;
 
 public class Game {
 	public static void main(String args[]) {
 		
-		List <Movimento> movimentos = Arrays.asList(new IrEsquerda(), new IrEsquerda(),
-				new Impulsionar(), new IrDireita(), new IrEsquerda());
+		Movimentos movimentos = new Movimentos();
 		
-		for(Movimento movimento : movimentos) {
+		List <Movimento> movimentosExecutado = Arrays.asList(movimentos.get("irEsquerda"), movimentos.get("irEsquerda"),
+				movimentos.get("Impulsionar"), movimentos.get("irDireita"), movimentos.get("irEsquerda"));
+		
+		for(Movimento movimento : movimentosExecutado) {
 			System.out.println(movimento);
 		}
 	}
